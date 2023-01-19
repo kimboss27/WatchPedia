@@ -152,7 +152,9 @@ const m_gnb=document.querySelector('.gnb');
 const close=document.querySelector('.close');
 menu.addEventListener('click',function(){
     m_gnb.style.right=0;
+    body.style.overflow="hidden"
 });
 close.addEventListener('click',function(){
     m_gnb.style.right=-100+'%'
+    body.style.overflow="scroll"
 })
