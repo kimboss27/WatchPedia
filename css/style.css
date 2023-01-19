@@ -709,6 +709,7 @@ a {
         background: transparent url("../images/icon/xicon.svg") no-repeat;
         background-size: contain;
         text-indent: -9999px;
+        cursor: pointer;
 
     }
     #header .gnb .gnb_top .top_wrap .right {
