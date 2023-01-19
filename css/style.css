@@ -647,72 +647,30 @@ a {
     #header .header_wrapper .left .category a {
         margin-right: 7px;
     }
+    
     #header .header_wrapper .left .m_right {
         display: flex;
         margin-right: 10px;
         align-items: center;
     }
-    #header .header_wrapper .m_right .m_search {
-        width: 20px;
-        height: 20px;
+    #header .header_wrapper .search_area{
+        width: 80%;
+        height: 50px;
+        margin-top: 0;
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+        display: none;
+    }
+    #header .header_wrapper .search_area .m_search {
+        width: 100%;
+        height: 100%;
         margin-right: 20px;
         margin-top: -4px;
     }
      
-    #header .header_wrapper .m_right .m_search input {
-        width: 100%;
-        height: 100%;
-        background: transparent url("../images/icon/search.svg") no-repeat center center;
-        background-size: 100%;
-        padding-left: 0px;
-        font-size: 0;
-        cursor: pointer;
-        border: 0 none;
-    }
-   
-    #header .header_wrapper .m_right .m_search.on {
-        width: 80%;
-        height: 50px;
-        margin-top: 0;
-        transition: all 0.2s;
-        position: absolute;
-        left: 50%;
-        top: 20px;
-        transform: translateX(-50%);
-    }
-    
-    #header .header_wrapper .m_right .s_close {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid #ccc;
-        display: none;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        position: absolute;
-        left: 50%;
-        top: 90px;
-        transform: translateX(-50%);
-        transition: all 0.4s;
-        cursor: pointer;
-    }
-    #header .header_wrapper .m_right .s_close span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        background: #999;
-        text-indent: -99999px;
-    }
-    #header .header_wrapper .m_right .s_close span.b1 {
-        margin-bottom: 5px;
-        transform: translate(0px, 3px) rotate(45deg)
-    }
-    #header .header_wrapper .m_right .s_close span.b2 {
-        transform: translate(0px, -4px) rotate(-45deg)
-    }
-    #header .header_wrapper .m_right .m_search.on input{
+    #header .header_wrapper .search_area .m_search input {
         width: 100%;
         height: 100%;
         border: 0 none;
@@ -726,6 +684,47 @@ a {
         letter-spacing: -0.5px;
         border: 1px solid #ccc;
         border-radius: 8px;
+    }
+   
+    #header .header_wrapper .search_area .s_close {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+    #header .header_wrapper .search_area .s_close span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #999;
+        text-indent: -99999px;
+    }
+    #header .header_wrapper .search_area .s_close span.b1 {
+        margin-bottom: 5px;
+        transform: translate(0px, 3px) rotate(45deg)
+    }
+    #header .header_wrapper .search_area .s_close span.b2 {
+        transform: translate(0px, -4px) rotate(-45deg)
+    }
+    #header .header_wrapper .left .m_serachicon {
+        display: block;
+        width: 23px;
+        height: 23px;
+        background: url("../images/icon/search.svg") no-repeat;
+        background-size: contain;
+        text-indent: -99999px;
+        margin-right: 15px;
     }
     #header .header_wrapper .left .menu {
         background: transparent;

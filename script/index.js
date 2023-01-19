@@ -95,12 +95,21 @@ xicon.addEventListener('click',function(e){
 
 /* -- 검색창 클릭 -- */
 const search=document.querySelector('.search');
-const mSearch=document.querySelector('.m_search');
+const mSearch=document.querySelector('.search_area');
 const sClose=document.querySelector('.s_close');
 const category=document.querySelector('.category');
 const section=document.querySelector('section');
 const tClose=document.querySelector('.t_close');
-
+const sIcon=document.querySelector('.m_serachicon ');
+sIcon.addEventListener('click',function(){
+    mSearch.style.display='block';
+    sIcon.style.display='none';
+    
+});
+sClose.addEventListener('click',function(){
+    mSearch.style.display='none';
+    sIcon.style.display='block';
+});
 if(window.innerWidth<1025){
     search.addEventListener('click',function(){
         search.classList.add('on');
@@ -114,15 +123,6 @@ if(window.innerWidth<1025){
     search.addEventListener('click',function(){
     });
 }
-
-mSearch.addEventListener('click',function(){
-    mSearch.classList.add('on');
-    sClose.style.display='flex';
-});
-sClose.addEventListener('click',function(){
-    mSearch.classList.remove('on');
-    sClose.style.display='none';
-});
 
 /* -- 해상도 별 검색창 변동 -- */
 window.addEventListener('resize',function(){
