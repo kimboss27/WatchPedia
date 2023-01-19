@@ -11,7 +11,7 @@ window.addEventListener('scroll',function(){
     }else {
         header.style.position="relative"
     }
-})
+});
 
 /* -- 슬라이드 영역 -- */
 const allA=document.querySelectorAll('a');
