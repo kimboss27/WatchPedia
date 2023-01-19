@@ -104,7 +104,7 @@ if(window.innerWidth<1025){
     tClose.addEventListener('click',function(){
         search.classList.remove('on');
         tClose.style.display='none';
-    })
+    });
 }else if(window.innerWidth>=1025){
     search.addEventListener('click',function(){
     });
@@ -126,10 +126,12 @@ window.addEventListener('resize',function(){
         mSearch.classList.remove('on');
         search.addEventListener('click',function(){
             search.classList.add('on');
+            tClose.style.display='flex'
         });
-        section.addEventListener('click',function(){
+        tClose.addEventListener('click',function(){
             search.classList.remove('on');
-        });
+            tClose.style.display='none';
+        })
     }
     if(this.window.innerWidth>=1025){
         tClose.style.display='none';
