@@ -5,7 +5,7 @@ const contentsTop=contents.offsetTop;
 
 /* -- contents top부분에서 position: fixed --*/
 window.addEventListener('scroll',function(){
-    let scroll=this.window.scrollY;
+    let scroll=window.scrollY;
     if(scroll>=contentsTop){
         header.style.position="fixed"
     }else {
@@ -92,10 +92,29 @@ xicon.addEventListener('click',function(e){
 const search=document.querySelector('.search');
 const mSearch=document.querySelector('.m_search');
 const sClose=document.querySelector('.s_close');
+const category=document.querySelector('.category')
+const section=document.querySelector('section')
 
-search.addEventListener('click',function(){
-    search.classList.add('on');
-});
+
+if(window.innerWidth<1025){
+    search.addEventListener('click',function(){
+        search.classList.add('on');
+        category.style.display='none';
+    });
+    section.addEventListener('click',function(){
+        search.classList.remove('on');
+        category.style.display='block';
+    });
+}else if(window.innerWidth>=1025){
+    search.addEventListener('click',function(){
+        category.style.display='block';
+    });
+}
+
+
+if(this.window.innerWidth>=1025){
+    category.style.display='block';
+}
 mSearch.addEventListener('click',function(){
     mSearch.classList.add('on');
     sClose.style.display='flex';
@@ -103,13 +122,28 @@ mSearch.addEventListener('click',function(){
 sClose.addEventListener('click',function(){
     mSearch.classList.remove('on');
     sClose.style.display='none';
-})
+});
 
 window.addEventListener('resize',function(){
     if(this.window.innerWidth<1025){
         search.classList.remove('on');
-        mSearch.classList.remove('on')
+        mSearch.classList.remove('on');
+        search.addEventListener('click',function(){
+            search.classList.add('on');
+            category.style.display='none';
+        });
+        section.addEventListener('click',function(){
+            search.classList.remove('on');
+            category.style.display='block';
+        });
     }
+    if(this.window.innerWidth>=1025){
+        category.style.display='block';
+        search.addEventListener('click',function(){
+            category.style.display='block';
+        });
+    }
+    
 })
 
 /* -- 모바일 메뉴 -- */
