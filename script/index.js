@@ -92,29 +92,24 @@ xicon.addEventListener('click',function(e){
 const search=document.querySelector('.search');
 const mSearch=document.querySelector('.m_search');
 const sClose=document.querySelector('.s_close');
-const category=document.querySelector('.category')
-const section=document.querySelector('section')
-
+const category=document.querySelector('.category');
+const section=document.querySelector('section');
+const tClose=document.querySelector('.t_close');
 
 if(window.innerWidth<1025){
     search.addEventListener('click',function(){
         search.classList.add('on');
-        category.style.display='none';
+        tClose.style.display='flex'
     });
-    section.addEventListener('click',function(){
+    tClose.addEventListener('click',function(){
         search.classList.remove('on');
-        category.style.display='block';
-    });
+        tClose.style.display='none';
+    })
 }else if(window.innerWidth>=1025){
     search.addEventListener('click',function(){
-        category.style.display='block';
     });
 }
 
-
-if(this.window.innerWidth>=1025){
-    category.style.display='block';
-}
 mSearch.addEventListener('click',function(){
     mSearch.classList.add('on');
     sClose.style.display='flex';
@@ -124,24 +119,26 @@ sClose.addEventListener('click',function(){
     sClose.style.display='none';
 });
 
+/* -- 해상도 별 검색창 변동 -- */
 window.addEventListener('resize',function(){
     if(this.window.innerWidth<1025){
         search.classList.remove('on');
         mSearch.classList.remove('on');
         search.addEventListener('click',function(){
             search.classList.add('on');
-            category.style.display='none';
         });
         section.addEventListener('click',function(){
             search.classList.remove('on');
-            category.style.display='block';
         });
     }
     if(this.window.innerWidth>=1025){
-        category.style.display='block';
-        search.addEventListener('click',function(){
-            category.style.display='block';
-        });
+        tClose.style.display='none';
+    }
+    if(this.window.innerWidth>641){
+        sClose.style.display='none';
+    }
+    if(this.window.innerWidth<=641){
+        tClose.style.display='none';
     }
     
 })

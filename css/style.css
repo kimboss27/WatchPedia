@@ -512,11 +512,17 @@ a {
     .mobile {
         display: none;
     }
+    .tablet {
+        display: none;
+    }
 }
 
 @media screen and (max-width:1024px) {
     .mobile {
         display: none;
+    }
+    #header {
+        width: 100%;
     }
     #header .header_wrapper {
         max-width: 800px;
@@ -542,10 +548,15 @@ a {
         cursor: pointer;
     }
     #header .header_wrapper .right .search.on {
-        width: 400px;
-        height: 30px;
+        width: 80%;
+        height: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
         margin-top: 0;
         transition: all 0.2s;
+      
     }
     #header .header_wrapper .right .search.on input{
         width: 100%;
@@ -559,6 +570,39 @@ a {
         white-space: nowrap;
         text-overflow: ellipsis;
         letter-spacing: -0.5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    #header .header_wrapper .right .t_close{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: none;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 130px;
+        transform: translateX(-50%);
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+    #header .header_wrapper .right .t_close span{
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #999;
+        text-indent: -99999px;
+    }
+    #header .header_wrapper .right .t_close .b1{
+        margin-bottom: 5px;
+        transform: translate(0px, 3px) rotate(45deg)
+    }
+    #header .header_wrapper .right .t_close .b2{
+        transform: translate(0px, -4px) rotate(-45deg)
     }
     .rank {
         max-width: 800px;
@@ -585,7 +629,7 @@ a {
     .mobile {
         display: block;
     }
-    .mobilehide {
+    .mobilehide,.tablet {
         display: none !important;
     }
 
@@ -645,12 +689,13 @@ a {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        background: transparent;
+        background: #fff;
         position: absolute;
         left: 50%;
         top: 90px;
         transform: translateX(-50%);
         transition: all 0.4s;
+        cursor: pointer;
     }
     #header .header_wrapper .m_right .s_close span {
         display: block;
