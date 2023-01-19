@@ -702,6 +702,7 @@ a {
         transform: translateX(-50%);
         transition: all 0.4s;
         cursor: pointer;
+        overflow-y: hidden;
     }
     #header .header_wrapper .search_area .s_close span {
         display: block;

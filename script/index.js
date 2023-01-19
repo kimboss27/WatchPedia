@@ -138,14 +138,11 @@ window.addEventListener('resize',function(){
             tClose.style.display='none';
         })
     }
-    if(this.window.innerWidth>=1025){
-        tClose.style.display='none';
-    }
     if(this.window.innerWidth>641){
-        sClose.style.display='none';
+        mSearch.style.display='none';
     }
     if(this.window.innerWidth<=641){
-        tClose.style.display='none';
+        sIcon.style.display='block';
     }
     
 })
