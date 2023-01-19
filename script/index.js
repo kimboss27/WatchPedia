@@ -91,12 +91,20 @@ xicon.addEventListener('click',function(e){
 /* -- 검색창 클릭 -- */
 const search=document.querySelector('.search');
 const mSearch=document.querySelector('.m_search');
+const sClose=document.querySelector('.s_close');
+
 search.addEventListener('click',function(){
-    search.classList.add('on')
-})
+    search.classList.add('on');
+});
 mSearch.addEventListener('click',function(){
-    mSearch.classList.add('on')
+    mSearch.classList.add('on');
+    sClose.style.display='flex';
+});
+sClose.addEventListener('click',function(){
+    mSearch.classList.remove('on');
+    sClose.style.display='none';
 })
+
 window.addEventListener('resize',function(){
     if(this.window.innerWidth<1025){
         search.classList.remove('on');
