@@ -9,6 +9,7 @@ html {
     font-family: serif;
     font-family: "Noto Sans KR'", sans-serif;
     color: #222;
+    overflow-x: hidden;
 }
 
 a {

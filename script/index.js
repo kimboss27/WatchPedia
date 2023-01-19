@@ -41,25 +41,31 @@ function responsive(){
     move_percent=movielists*10/show; /* 이동 거리 퍼센트 */
     max_move=10-show; /* 리스트 끝에 도착 */
 }
+
 /* -- 클릭 이벤트 -- */
 for(let n=0; n<next.length; n++){
     let list_move=0;
     next[n].addEventListener('click',function(e){
         e.preventDefault();
         responsive();
-            if(list_move==0){prev[n].style.display='flex'}
-            list_move++;
-            //console.log(list_move);
-            list[n].style.left=`-${move_percent*list_move}%`
-            if(list_move==max_move){next[n].style.display='none'}
+        if(list_move==0){prev[n].style.display='flex'}
+        list_move++;
+        list[n].style.left=`-${move_percent*list_move}%`;
+        if(list_move==max_move){
+            next[n].style.display='none';
+            prev[n].style.display='flex';
+        }
     })
     prev[n].addEventListener('click',function(e){
         e.preventDefault();
         responsive();
         if(list_move==max_move){next[n].style.display='flex'}
         list_move--;
-        list[n].style.left=`-${move_percent*list_move}%`
+        list[n].style.left=`-${move_percent*list_move}%`;
         if(list_move==0){prev[n].style.display='none'}
+    })
+    window.addEventListener('resize',function(){
+        list_move=0;
     })
 }
 
@@ -69,9 +75,8 @@ window.addEventListener('resize',function(){
     for(let p=0; p<prev.length; p++){
         prev[p].style.display='none';
         next[p].style.display='flex';
-        list[p].style.left=0;
+        list[p].style.left=0;   
     }
-
 })
 /* -- 언어선택화면 --*/
 const pop=document.querySelector('.lang > button');
