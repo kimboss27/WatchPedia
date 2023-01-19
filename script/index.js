@@ -154,11 +154,12 @@ window.addEventListener('resize',function(){
 const menu=document.querySelector('.menu');
 const m_gnb=document.querySelector('.gnb');
 const close=document.querySelector('.close');
+const html=document.querySelector('html');
 menu.addEventListener('click',function(){
     m_gnb.style.right=0;
-    body.style.overflow="hidden"
+    html.style.overflow='hidden'
 });
 close.addEventListener('click',function(){
     m_gnb.style.right=-100+'%'
-    body.style.overflow="scroll"
+    html.style.overflow='scroll'
 })
