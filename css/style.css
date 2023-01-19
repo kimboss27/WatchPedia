@@ -22,6 +22,7 @@ a {
     position:relative;
     z-index: 100;
     background: #fff;
+    overflow: hidden;
 }
 
 #header .header_wrapper {
