@@ -185,6 +185,7 @@ const langA=document.querySelectorAll('.lang_pop .wrapper > a')
 
 for(let l=0; l<langA.length; l++){
     langA[l].addEventListener('click',function(e){
+        e.preventDefault()
         for(let g=0; g<langA.length; g++){
             if(langA[g].classList.contains('active')){
                 langA[g].classList.remove('active')
