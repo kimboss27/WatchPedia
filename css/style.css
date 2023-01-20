@@ -64,6 +64,7 @@ a {
 
 #header .header_wrapper .left .category a.active {
     color: #222;
+    font-weight: 500;
 }
 
 #header .header_wrapper .left .category a:last-of-type {
@@ -370,7 +371,9 @@ a {
     font-size: 13px;
     font-weight: 700;
 }
-
+#footer .footer_wrapper .footer_mid p a {
+    color: #999;
+}
 #footer .footer_wrapper .footer_mid p span:first-of-type::after {
     content: "";
     display: inline-block;
@@ -590,6 +593,7 @@ a {
         transform: translateX(-50%);
         transition: all 0.4s;
         cursor: pointer;
+        overflow-y: hidden;
     }
     #header .header_wrapper .right .t_close span{
         display: block;

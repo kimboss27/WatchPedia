@@ -1,3 +1,4 @@
+
 /* -- 헤더 고정 -- */
 const header=document.querySelector('#header');
 const contents=document.querySelector('#contents');
@@ -14,7 +15,7 @@ window.addEventListener('scroll',function(){
 });
 
 /* -- 슬라이드 영역 -- */
-const allA=document.querySelectorAll('a');
+
 const list=document.querySelectorAll('.container');
 const movielsit=document.querySelectorAll('.container .movie');
 const prev=document.querySelectorAll('.prev');
@@ -26,11 +27,14 @@ let move_percent=0;
 let max_move=0;
 
 /* -- 클릭 이벤트 방지 -- */
-for(let a=0; a<allA.length; a++){
-    allA[a].addEventListener('click',function(e){
+
+const movieA=document.querySelectorAll('.movie');
+for(let a=0; a<movieA.length; a++){
+    movieA[a].addEventListener('click',function(e){
         e.preventDefault();
     })
 }
+
 /* -- slide 이동 -- */
 
 /* --  해상도 변경시 리스트 보여지는 개수 --*/
@@ -85,19 +89,18 @@ const body=document.querySelector('body');
 const xicon=document.querySelector('.xicon')
 pop.addEventListener('click',function(){
     popbg.style.display='block'
-    body.style.overflow='hidden'
+    html.style.overflow='hidden'
 })
 xicon.addEventListener('click',function(e){
     e.preventDefault()
     popbg.style.display='none'
-    body.style.overflow='scroll'
+    html.style.overflow='scroll'
 })
 
 /* -- 검색창 클릭 -- */
 const search=document.querySelector('.search');
 const mSearch=document.querySelector('.search_area');
 const sClose=document.querySelector('.s_close');
-const category=document.querySelector('.category');
 const section=document.querySelector('section');
 const tClose=document.querySelector('.t_close');
 const sIcon=document.querySelector('.m_serachicon ');
@@ -160,3 +163,33 @@ close.addEventListener('click',function(){
     m_gnb.style.right=-100+'%'
     html.style.overflow='scroll'
 })
+
+/* -- 상단 카테고리 클릭 -- */
+const category=document.querySelector('.category')
+const categoryAll=category.querySelectorAll('a')
+
+for(let i=0; i<categoryAll.length; i++){
+    categoryAll[i].addEventListener('click',function(e){
+        e.preventDefault();
+        for(let a=0; a<categoryAll.length; a++){
+            if(categoryAll[a].classList.contains('active')){
+                categoryAll[a].classList.remove('active');
+            }
+        }
+        e.target.classList.add('active')
+    })
+}
+
+/* -- 푸터 언어 선택 클릭 --*/
+const langA=document.querySelectorAll('.lang_pop .wrapper > a')
+
+for(let l=0; l<langA.length; l++){
+    langA[l].addEventListener('click',function(e){
+        for(let g=0; g<langA.length; g++){
+            if(langA[g].classList.contains('active')){
+                langA[g].classList.remove('active')
+            }
+        }
+        e.target.classList.add('active')
+    })
+}
