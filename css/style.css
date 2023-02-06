@@ -11,7 +11,9 @@ html {
     color: #222;
     overflow-x: hidden;
 }
-
+body {
+    background: #fff;
+}
 a {
     color: #222;
 }
@@ -147,8 +149,8 @@ a {
     top: 50%;
     transform: translateY(-50%);
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     text-indent: -99999px;
     border-radius: 50%;
     display: flex;
@@ -822,8 +824,8 @@ a {
     }
 
     .rank > a {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 
     .rank > a img {

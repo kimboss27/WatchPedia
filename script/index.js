@@ -15,7 +15,6 @@ window.addEventListener('scroll',function(){
 });
 
 /* -- 슬라이드 영역 -- */
-
 const list=document.querySelectorAll('.container');
 const movielsit=document.querySelectorAll('.container .movie');
 const prev=document.querySelectorAll('.prev');
@@ -27,7 +26,6 @@ let move_percent=0;
 let max_move=0;
 
 /* -- 클릭 이벤트 방지 -- */
-
 const movieA=document.querySelectorAll('.movie');
 for(let a=0; a<movieA.length; a++){
     movieA[a].addEventListener('click',function(e){
